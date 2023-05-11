@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] enemies;
     public int maxEnemiesOnScreen;
     public int enemiesOnScreen;
-    public int totalEnemies;
-    public int enemiesPerSpawn;
+    public int enemiesPerWave;
     public int currentGold;
     public TextMeshProUGUI goldtext;
     public TextMeshProUGUI CurentWaveText;
@@ -25,34 +24,43 @@ public class GameManager : MonoBehaviour
     public int currentHealth;
     public GameObject winWindow;
     public GameObject loseWindow;
+    public bool gameIsPaused;
 
+    private int enemiesSpawnedInWave;
     private void Awake()
     {
         instance = this;
         currentHealth = maxHealth;
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        
     }
 
     // Update is called once per frame
-    void Update()
+   void Update()
     {
+        gameIsPaused = PauseGame.gameIsPaused;
         goldtext.text = currentGold.ToString();
         CurentWaveText.text = currentWave.ToString() + "/" + maxWave.ToString();
         CurentHealthText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
-        if (currentWave < maxWave && enemiesOnScreen == 0)
+        if (!gameIsPaused)
         {
-            currentWave++;
-            totalEnemies++;
-            maxEnemiesOnScreen++;
-            waitingTime -= 0.1f;
-            StartCoroutine(Spawn());
-        }else if(currentWave == maxWave && enemiesOnScreen == 0)
-        {
-            winWindow.SetActive(true);
-            StopAllCoroutines();
+            if (currentWave < maxWave && enemiesOnScreen == 0)
+            {
+                currentWave++;
+                maxEnemiesOnScreen++;
+                //waitingTime -= 0.1f;
+                enemiesSpawnedInWave = 0;
+                StartCoroutine(Spawn());
+            }
+            else if (currentWave == maxWave && enemiesOnScreen == 0)
+            {
+                winWindow.SetActive(true);
+                StopAllCoroutines();
+            }
         }
     }
+
 
     public void AddGold(int amount)
     {
@@ -73,28 +81,26 @@ public class GameManager : MonoBehaviour
             currentHealth = 0;
         }
     }
-
     IEnumerator Spawn()
     {
-        if(enemiesOnScreen < totalEnemies)
+        while (enemiesSpawnedInWave < enemiesPerWave)
         {
-            for(int i = 0;i < enemiesPerSpawn; i++)
+            if (!gameIsPaused)
             {
-                if(enemiesOnScreen < maxEnemiesOnScreen)
-                {
-                    //spawn enemy
-                    GameObject newEnemy = Instantiate(enemies[Random.Range(0,4)] as GameObject);
-                    newEnemy.transform.position = spawnPoint.transform.position;
-                    enemiesOnScreen += 1;
-                }
+                GameObject newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length)] as GameObject);
+                newEnemy.transform.position = spawnPoint.transform.position;
+                enemiesOnScreen++;
+                enemiesSpawnedInWave++;
+                yield return new WaitForSecondsRealtime(waitingTime);
             }
+        }
 
-            //time between every spawn
-            yield return new WaitForSeconds(waitingTime);
+        yield return new WaitForSecondsRealtime(waitingTime);
+        if (currentWave < maxWave)
+        {
             StartCoroutine(Spawn());
         }
     }
-
     public void NextLevel()
     {
         SceneManager.LoadScene(nextSceneToLoad);
@@ -104,11 +110,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("levelAt", nextSceneToLoad);
         }
     }
-
+    
     public void ReplyLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void MainMenu() { SceneManager.LoadScene(0); }
+
+    
 }

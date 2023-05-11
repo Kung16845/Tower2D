@@ -9,13 +9,14 @@ public class Tower : MonoBehaviour
     public Transform[] firePoints;
     public float shotPerSecond;
     private float nextShotTime;
-
+    public float attackRange;
     public int level;
     public int maxLevel;
     public int upgradeCost;
     public Animator anim;
     public GameObject lvupEffect;
     public TextMeshProUGUI UpgradeCosetText;
+    public float sellPercentage = 0.5f;
 
     private void Start()
     {
@@ -38,6 +39,21 @@ public class Tower : MonoBehaviour
             Instantiate(lvupEffect, transform.position, transform.rotation);
             AudioManager.instance.PlaySFX(10);
         }
+    }
+    public int sellValue = 20; // ค่าขายของหอเรือรบ
+    public void SellTower()
+    {
+        // เรียกใช้เมธอด ReleaseBuildPlace ก่อนทำลายหอป้อม
+        TowerManager towerManager = FindObjectOfType<TowerManager>();
+        if (towerManager != null)
+        {
+            towerManager.ReleaseBuildPlace(transform.position);
+        }
+
+        // เพิ่มเงินให้กับผู้เล่นตามค่าขายของหอเรือรบ
+        GameManager.instance.AddGold(sellValue);
+        // ทำลายออบเจกต์ของหอเรือรบ
+        Destroy(gameObject);
     }
 
     public void Shoot()

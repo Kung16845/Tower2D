@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -507806129
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 349ed917d16109949a95907fc5ba04b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +140,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.39281082, y: -0.04208684}
@@ -158,25 +158,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1520468d25351d142bd52923807c5443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 0
   target: 0
-  exitPoint: {fileID: 2515339099138452437, guid: b985919635d75a44c94f1c43db7eabe5, type: 3}
+  exitPoint: {fileID: 162022295840160836, guid: 63e4519e1440baf48b970b644990e585, type: 3}
   wayPoint:
-  - {fileID: 3648832459559934022, guid: 2ec2fcfa11d709540888295153a93c87, type: 3}
-  - {fileID: 8397440499531346923, guid: 5636239c74cb971449856fd0386a44b6, type: 3}
-  - {fileID: 3851588955794274723, guid: 68d31d796abbc4a45a124dfd8b1c7b03, type: 3}
-  - {fileID: 5052561746955233628, guid: 2a181e05fbeb74e4fb42e63d494204ec, type: 3}
-  - {fileID: 1019387554622886692, guid: bb8a88cbd7f658c478db1d90d78257ca, type: 3}
-  - {fileID: 2895672521435547672, guid: 945aace5320c3fc4ba3b1ea89084fe60, type: 3}
-  - {fileID: 3263495805077346399, guid: a17497f4ffbd62045bcd7a6b9a95ef6a, type: 3}
-  - {fileID: 8839283372907294462, guid: d083186e31db0294ba8e265b77845d91, type: 3}
-  - {fileID: 6380836670442826755, guid: 83ce1decfdcb900459b4da95457e2303, type: 3}
-  - {fileID: 7535926793190976212, guid: c452b4d1caef557439f8895cab348b68, type: 3}
-  - {fileID: 4610175962596960877, guid: 742f95a086d9d3a44ac3cfc822bff5f8, type: 3}
-  - {fileID: 8947458484712425172, guid: cb4cc3fe0a5ba2c4bbb4c65bec2f7f6c, type: 3}
-  - {fileID: 3272828613885815681, guid: 0068f5c8135fad24ea9090fccd80ab50, type: 3}
-  - {fileID: 5973831411121338476, guid: d01cd0d0fb1e4234fadbe9a1e7c373df, type: 3}
-  - {fileID: 8319646814079352435, guid: a62cede9257eac44391b2b6c528140cc, type: 3}
-  - {fileID: 8196837550852369022, guid: 4f769f337c4dc0c45a8fae2304bd8c89, type: 3}
+  - {fileID: 2146197240397415544, guid: 2ec2fcfa11d709540888295153a93c87, type: 3}
+  - {fileID: 1110827588957565698, guid: 5636239c74cb971449856fd0386a44b6, type: 3}
+  - {fileID: 8868705333402370540, guid: 68d31d796abbc4a45a124dfd8b1c7b03, type: 3}
+  - {fileID: 8384705879357711363, guid: 2a181e05fbeb74e4fb42e63d494204ec, type: 3}
+  - {fileID: 7142201164455131214, guid: bb8a88cbd7f658c478db1d90d78257ca, type: 3}
+  - {fileID: 5371492664019854007, guid: 945aace5320c3fc4ba3b1ea89084fe60, type: 3}
+  - {fileID: 4706950747792002143, guid: a17497f4ffbd62045bcd7a6b9a95ef6a, type: 3}
+  - {fileID: 2743351255567671815, guid: d083186e31db0294ba8e265b77845d91, type: 3}
+  - {fileID: 7031063528821088826, guid: 83ce1decfdcb900459b4da95457e2303, type: 3}
+  - {fileID: 7236144517433426155, guid: c452b4d1caef557439f8895cab348b68, type: 3}
+  - {fileID: 7535985103359380558, guid: 742f95a086d9d3a44ac3cfc822bff5f8, type: 3}
+  - {fileID: 7629021267953975722, guid: cb4cc3fe0a5ba2c4bbb4c65bec2f7f6c, type: 3}
+  - {fileID: 7383617561399519333, guid: 0068f5c8135fad24ea9090fccd80ab50, type: 3}
+  - {fileID: 4353437782965776607, guid: d01cd0d0fb1e4234fadbe9a1e7c373df, type: 3}
+  - {fileID: 494622726983993622, guid: a62cede9257eac44391b2b6c528140cc, type: 3}
+  - {fileID: 4244834066189237953, guid: 4f769f337c4dc0c45a8fae2304bd8c89, type: 3}
+  - {fileID: 6688650217302451302, guid: 5c4d49bbdf7fc6046bd1fc2ac8047fa8, type: 3}
+  - {fileID: 6111566348034701819, guid: 4d1a461f191dc82478d0006ecd963b71, type: 3}
+  - {fileID: 6494173459059917179, guid: 05f5d14d6b61d604b9a4e332a2ad4cce, type: 3}
+  - {fileID: 7696862362154795396, guid: 43cc22a958d2de442b01dcc7a8e4fff9, type: 3}
+  - {fileID: 8145128061575714032, guid: 78f7b280bfa19b94eac5c42f939c708d, type: 3}
+  - {fileID: 8003361401487043062, guid: 2518c5adb39019749bb8fd9019ee7f27, type: 3}
+  - {fileID: 6861942904169043716, guid: 8385deb28fa4d3c4997c8e7f4140d4d7, type: 3}
   navTimeUpdate: 0
   currentNavTime: 0
 --- !u!114 &344185063141984061

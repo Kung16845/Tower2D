@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &12879165297784019
+--- !u!1 &7797410359172260051
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3263495805077346399}
-  - component: {fileID: 3842523921712757808}
+  - component: {fileID: 4706950747792002143}
+  - component: {fileID: 6434330798976608304}
   m_Layer: 0
   m_Name: Way Point (7)
   m_TagString: wp
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3263495805077346399
+--- !u!4 &4706950747792002143
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12879165297784019}
+  m_GameObject: {fileID: 7797410359172260051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57, y: 2.55, z: 0}
+  m_LocalPosition: {x: -1.36, y: 0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3842523921712757808
+--- !u!61 &6434330798976608304
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12879165297784019}
+  m_GameObject: {fileID: 7797410359172260051}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

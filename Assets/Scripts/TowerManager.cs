@@ -62,7 +62,17 @@ public class TowerManager : MonoBehaviour
         }
         BuildList.Clear();
     }
-
+     public void ReleaseBuildPlace(Vector3 towerPosition)
+    {
+        foreach (Collider2D buildPlace in BuildList)
+        {
+            if (buildPlace.transform.position == towerPosition)
+            {
+                buildPlace.tag = "BuildPlace";
+                break;
+            }
+        }
+    }
     public void RegisterTower(GameObject tower)
     {
         TowerList.Add(tower);

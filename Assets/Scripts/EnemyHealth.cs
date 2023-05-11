@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class EnemyHealth : MonoBehaviour
 {
     public Animator anim;
@@ -39,11 +39,18 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void Destroy()
-    {
-        Destroy(gameObject);
-        GameManager.instance.enemiesOnScreen -= 1;
-
-        GameObject obj = Instantiate(splash, transform.position, transform.rotation);
-        Destroy(obj, 0.7f);
+    {   
+        try
+        {
+            Destroy(gameObject); 
+            GameManager.instance.enemiesOnScreen -= 1;
+            GameObject obj = Instantiate(splash, transform.position, transform.rotation);
+            Destroy(obj, 0.7f);
+        } catch(Exception e)
+        {
+            Debug.Log("Object Catch = " + e );
+        }
+        
+       
     }
 }

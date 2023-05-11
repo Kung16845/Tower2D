@@ -16,20 +16,32 @@ public class TowerEye : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+        void Update()
     {
-        if(closestEnemy != null)
+        closestEnemy = GetClosestEnemy();
+
+        if (closestEnemy != null)
         {
+            float distanceToClosestEnemy = Vector2.Distance(transform.position, closestEnemy.transform.position);
+
+            if (distanceToClosestEnemy <= tower.attackRange) // Replace 'tower.attackRange' with the desired attack range of the tower
+            {
+                shouldShoot = true;
+            }
+            else
+            {
+                shouldShoot = false;
+            }
+
             LookAtEnemy();
-            if(shouldShoot == true)
+
+            if (shouldShoot == true)
             {
                 tower.Shoot();
             }
-
         }
-
-        //closestEnemy = GetClosestEnemy();
     }
+
 
     public void LookAtEnemy()
     {

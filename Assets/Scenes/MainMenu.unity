@@ -1267,6 +1267,7 @@ GameObject:
   - component: {fileID: 496731950}
   - component: {fileID: 496731949}
   - component: {fileID: 496731953}
+  - component: {fileID: 496731954}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1308,7 +1309,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1369,6 +1370,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: SelectMap
+--- !u!114 &496731954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496731948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3d33d6d4d765e42aa9edcd03c7a159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &636244746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1414,7 @@ RectTransform:
   - {fileID: 908329898}
   - {fileID: 1199992338}
   m_Father: {fileID: 1662771078}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3201,8 +3214,8 @@ RectTransform:
   m_Children:
   - {fileID: 1427180097}
   - {fileID: 1136984125}
-  - {fileID: 636244747}
   - {fileID: 1753575151}
+  - {fileID: 636244747}
   m_Father: {fileID: 496731952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3231,7 +3244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5406894b8a322b14a9317ddd34aa0e9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cca62fd203091e64194d363e1b247d2e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3319,7 +3332,7 @@ RectTransform:
   m_Children:
   - {fileID: 1947579356}
   m_Father: {fileID: 1662771078}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.instance.PlaySFX(3);
         SceneManager.LoadScene(startScene);
+        PauseGame.gameIsPaused = false;
     }
 
     public void OnApplicationQuit()
